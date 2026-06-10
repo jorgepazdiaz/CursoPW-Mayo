@@ -12,6 +12,9 @@
   "test:chromium": "npm run clean:reports && cross-env BROWSER=chromium cucumber-js --format progress --format json:reports/json/chromium-report.json && npm run report",
   "test:firefox": "npm run clean:reports && cross-env BROWSER=firefox cucumber-js --format progress --format json:reports/json/firefox-report.json && npm run report",
   "test:webkit": "npm run clean:reports && cross-env BROWSER=webkit cucumber-js --format progress --format json:reports/json/webkit-report.json && npm run report",
+  "test:chromium:run": "cross-env BROWSER=chromium cucumber-js --format progress --format json:reports/json/chromium-report.json",
+"test:firefox:run": "cross-env BROWSER=firefox cucumber-js --format progress --format json:reports/json/firefox-report.json",
+"test:webkit:run": "cross-env BROWSER=webkit cucumber-js --format progress --format json:reports/json/webkit-report.json",
   "test:browsers": "npm run clean:reports && npm-run-all --continue-on-error --parallel test:chromium:run test:firefox:run test:webkit:run && npm run report",
   "report": "node generate-report.js"
 },
