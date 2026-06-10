@@ -17,7 +17,7 @@ Before(async function (this: CustomWorld) {
   const browserType = browsers[browserName as keyof typeof browsers];
 
   this.browser = await browserType.launch({
-    headless: false
+    headless: true,
   });
 
   this.context = await this.browser.newContext({
